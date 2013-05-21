@@ -1,0 +1,59 @@
+﻿/*******表格********/
+
+.webgrid-table
+{
+    width: 100%;
+    border-collapse: collapse;
+}
+.webgrid-table th
+{
+    height: 24px; /*表头的高度*/
+    background: #cde5ff; /*表头的颜色*/
+    border: 1px solid #abc5e8; /*表头的边框*/
+    text-align: center; /*表头的文本居中*/
+}
+.webgrid-table td
+{
+ 
+    color: #29528c;
+    line-height: 29px;
+    background: #fff;
+    border: 1px solid #d5e5f5;
+    text-align: center;
+}
+/*鼠标划过行的样式*/
+.webgrid-table tr td.tabHove
+{
+    background: #f5f7d1;
+}
+/*交替行的样式*/
+.webgrid-alter td
+{
+    background: #f7fbfe;
+}
+
+/*分页的样式*/
+.paging-number
+{
+    text-align: left;
+    padding: 20px 0 5px 0;
+    border-width: 1px;
+}
+.paging-number a
+{
+    margin: 0 5px 0 0;
+    padding: 3px 6px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+}
+.paging-number td
+{
+    border: 0px;
+    float: right;
+}
+
+/*表格外的DIV的样式*/
+#DivGrid
+{
+    width: 100%;
+}

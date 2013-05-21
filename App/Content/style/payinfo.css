@@ -1,0 +1,34 @@
+@charset "utf-8";
+/* 20130402 Iceli payinfo*/
+.payinfo { height:auto; padding:9px 80px; margin-bottom:12px; border-top:2px solid #bed6f0; background:#f3faff; border-bottom:1px dashed #cceaff;position:relative;}
+.payinfo h2 { padding-left:24px; background: url(../images/w.jpg) no-repeat; margin-bottom:12px; line-height:20px; font-size:14px; color:#000;}
+.payinfo p { margin:0 0 10px;line-height:24px; color:#333; padding-left:24px;}
+.payinfo p.nopl { padding:0;}
+.payinfo_name { font-size:12px; line-height:24px;}
+.payinfo p span.name { font-family:Tahoma; font-size:16px; font-weight:bold;}
+.payinfo p span.red-font { color:#c6322f; font-family:Arial; font-weight:bold;}
+.payinfo p input { width:79px; line-height:18px; vertical-align: middle;}
+.payinfo p img { vertical-align:middle; cursor:pointer;}
+.payinfo p strong { font-size: 14px;}
+.helptext3 { width:150px; height:auto;left:260px; bottom:30px; background:#fff; border:1px solid #56b418;position:absolute; }
+.helptext3 p { padding:0 10px;}
+.method { width:938px; margin:0 auto; height:auto; padding-top:15px; margin-bottom:20px;}
+.method .method-tit {width:125px; height:35px; margin-left:0; background: url(../images/method-tit.jpg) no-repeat; text-indent:-9999px; position:relative;}
+.method .method-tit span{ position:absolute; width:9px; height:5px; display:block; left:60px; top:35px; background:url(../images/tit-arrow.jpg) no-repeat;}
+.method .method-inner { padding:26px 0  0 0; border-width:1px 2px 1px 2px; border-style:solid; border-color:#bed6f0; background:#f7fbff;}
+.method .method-tit02{background: url(../images/method-tit02.jpg) no-repeat; }
+.method .method-inner ul{ padding-left:50px; width:auto; overflow:hidden;}
+.method .method-inner ul li{ float:left; width:220px; padding-bottom:10px;}
+.method .method-inner ul li input { vertical-align: top;}
+.method .method-inner ul li img { vertical-align:middle;}
+.method .method-inner ul li label { cursor:pointer;}
+.method .method-inner .payment_btn { margin-top:28px;margin-bottom:28px;}
+.method .method-inner .payment_btn p { text-align:center}
+.cart-btn { text-align:right; margin:17px 0 14px;}
+.cart-btn p{ text-align:center; padding:10px 0;}
+.cart-btn input.payment { border:0; padding:0; margin:0; background:url(../images/payment_btn.jpg) no-repeat; width:244px; height:37px; cursor:pointer;}
+.cart-btn span { margin-right:15px;}
+.cart-btn span img { vertical-align:middle;}
+.cart-btn span input { width:120px; height:37px; padding:0; border:0; margin:0; background: url(../images/paybtn.jpg) no-repeat; cursor:pointer; vertical-align:middle; }
+.fee_tips { color:#999; font-size:12px; }
+

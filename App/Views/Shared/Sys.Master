@@ -1,0 +1,37 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html>
+<html>
+<head id="MyHead" runat="server">
+    <script src="<%: Url.Content("~/Scripts/jquery.min.js") %>" type="text/javascript"></script>
+      <script src="<%: Url.Content("~/Scripts/JScriptCommon.js") %>" type="text/javascript"></script>
+    <link href="<%: Url.Content("~/Content/StyleSheet.css") %>" rel="stylesheet" type="text/css" />
+    <script src="<%: Url.Content("~/Res/jqueryui186custom/development-bundle/ui/minified/jquery.ui.position.min.js") %>"
+        type="text/javascript"></script>
+    <script src="<%: Url.Content("~/Res/jqueryui186custom/development-bundle/ui/minified/jquery.ui.core.min.js") %>"
+        type="text/javascript"></script>
+    <script src="<%: Url.Content("~/Res/jqueryui186custom/development-bundle/ui/minified/jquery.ui.widget.min.js") %>"
+        type="text/javascript"></script>
+    <script src="<%: Url.Content("~/Res/jqueryui186custom/development-bundle/ui/jquery.ui.button.js") %>"
+        type="text/javascript"></script>
+       <script src="<%: Url.Content("~/Res/jqueryui186custom/development-bundle/ui/minified/jquery.ui.dialog.min.js") %>"
+        type="text/javascript"></script>  
+ 
+    <link href="<%: Url.Content("~/Res/jqueryui186custom/css/ui-lightness/jquery-ui-1.8.6.custom.css") %>"
+        rel="stylesheet" type="text/css" />
+   
+    <title>
+        
+    </title>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div class="mbx">
+        <asp:ContentPlaceHolder ID="CurentPlace" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+    </asp:ContentPlaceHolder>
+</body>
+</html>

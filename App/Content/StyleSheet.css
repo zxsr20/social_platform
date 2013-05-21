@@ -1,0 +1,334 @@
+﻿/*文本对齐方式*/
+.alignLeft{text-align:left;padding-left:5px;}
+.alignRight{text-align:right;}
+.alignCenter{text-align:center;}
+td,th{
+  font-size:12px;
+  }
+.contentbg{
+  background-image: url(images/main_bg.gif);
+}
+/*--"内容部分表格内容样式"--*/
+.table_Content_bg td,.table_Content_bg th{
+  background-color:#FFFFFF;
+  height:25px;
+  line-height:25px;
+}
+.table_content_head{
+	background-color:#DCEEFB;
+	line-height:25px;
+	color:#0045A2;
+	font-weight:bold;
+	font-size:12px;
+	text-align:center;
+}
+.blueTab{
+	background-color:#6AB2E7;
+	line-height: 25px;
+	margin:0 auto;
+}
+.thstyle{
+	background-color:#DCEEFB;
+	line-height:25px;
+	color:#0045A2;
+	font-weight:bold;
+	font-size:12px;
+	text-align:center;
+}
+.blueTab td{
+	background-color:#ffffff;
+}
+/*表格caption样式*/
+.caption{
+	line-height:23px;
+	color:#0F3383;
+	font-weight:bold;
+	font-size:12px;
+	text-align:left;
+	vertical-align:middle;
+	padding-left:3px;
+}
+/*表格标题样式*/
+.header{
+	height:23px;
+	width:95%;
+	background-image:url(images/bg_caption.gif);
+	background-repeat:repeat-x;
+	margin:0 auto 0 auto;
+}
+.header h3{
+	height:23px;
+	float:left;
+	font-size:12px;
+	text-align:left;
+	line-height:23px;
+	color:#0F3383;
+}
+.leftcorner{
+	width:27px;
+	height:23px;
+	float:left;
+	background-image:url(images/caption_left.gif);
+	background-repeat: no-repeat;
+}
+.rightcorner{
+	width:7px;
+	height:23px;
+	float:right;
+	background-image:url(images/caption_right.gif);
+	background-repeat: no-repeat;
+}
+body
+{
+    font-size: 12px;
+    font-family: 微软雅黑,新宋体;
+    margin: 0;
+    padding: 0;
+}
+h2
+{
+    padding-left: 5px;
+}
+.mbx
+{
+    height: 23px;
+    font-weight: bold;
+	color:#9b6835;
+    border-bottom: 1px #999 dotted;
+    padding: 12px 19px 3px 19px;
+    margin: 4px;
+    background: url(../Images/direction.gif) 0 center no-repeat;
+}
+ 
+/*my style*/
+.backcolor
+{
+    font-size: 13px;
+    float: right;
+    color: red;
+}
+.searchcss
+{
+    padding-left: 20px;
+    background: url(../../Res/easyui/themes/icons/search.png) no-repeat 1px;
+}
+.detailcss
+{
+    padding-left: 20px;
+    background: url(../../Res/flexigrid/css/images/view.png) no-repeat 1px;
+}
+
+.addcss
+{
+    padding-left: 20px;
+    background: url(../../Res/easyui/themes/icons/edit_add.png) no-repeat 1px;
+}
+.deletecss
+{
+    padding-left: 20px;
+    background: url(../../Res/easyui/themes/icons/edit_remove.png) no-repeat 1px;
+}
+.editcss
+{
+    padding-left: 20px;
+    background: url(../../Res/easyui/themes/icons/pencil.png) no-repeat 1px;
+}
+
+
+.selectcss
+{
+    padding-left: 20px;
+    background: url(../../Res/easyui/themes/icons/ok.png) no-repeat 1px;
+}
+
+.excelcss
+{
+    padding-left: 20px;
+    background: url(../../Res/flexigrid/css/images/excelcss.jpg) no-repeat 1px;
+}
+.deleteStyle
+{
+	float:left;
+}
+.anUnderLine
+{
+    text-decoration: underline;
+}
+.showHeight
+{
+    height: 345px;
+}
+
+/* Styles for editor and display helpers
+
+.text-box.multi-line
+{
+    height: 6.5em;
+}
+----------------------------------------------------------*/
+
+fieldset
+{
+    width: 760px;
+    margin-left: 4px;
+    padding: 1em;
+    border: 1px solid #CCC;
+}
+
+legend
+{
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 2px 4px 8px 4px;
+}
+.tri-state
+{
+    width: 200px;
+}
+
+.search
+{
+    width: 600px;
+    float: left;
+}
+.display-label
+{
+    width: 77px;
+    height: 53px;
+    float: left;
+}
+.display-field
+{
+    color: #1c94c4;
+    width: 290px;
+    height: 53px;
+    float: left;
+}
+.editor-label
+{
+    width: 77px;
+    height: 53px;
+    float: left;
+}
+.editor-field
+{
+    width: 290px;
+    height: 53px;
+    float: left;
+}
+.bigdiv
+{
+    width: 750px;
+}
+.divQuery
+{
+    display: none;
+}
+.editor-field-Search
+{
+    width: 350px;
+    height: 53px;
+    float: left;
+}
+
+/* link
+----------------------------------------------------------
+a:link
+{
+    color: #034af3;
+    text-decoration: underline;
+}
+a:visited
+{
+    color: #505abc;
+}
+a:hover
+{
+    color: #1d60ff;
+    text-decoration: none;
+}
+a:active
+{
+    color: #12eb87;
+}
+ 
+
+*/
+
+/* FORM LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+
+
+input[type="password"]
+{
+    font-size: 16px;
+    font-family: 微软雅黑,新宋体,Tahoma,Verdana,;
+    height: 21px;
+    width: 210px;
+    border: 1px solid #CCC;
+}
+
+
+.text-box
+{
+    font-size: 16px;
+    font-family: 微软雅黑,新宋体,Tahoma,Verdana,;
+    height: 21px;
+    width: 210px;
+    border: 1px solid #CCC;
+}
+textarea
+{
+    font-size: 16px;
+    font-family: 微软雅黑,新宋体,Tahoma,Verdana,;
+    height: 21px;
+    width: 210px;
+    border: 1px solid #CCC;
+}
+select
+{
+    font-size: 16px;
+    font-family: 微软雅黑,新宋体,Tahoma,Verdana,;
+    height: 26px;
+    width: 214px;
+    border: 1px solid #CCC;
+}
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error
+{
+    font-size: 16px;
+    font-family: 微软雅黑,新宋体,Tahoma,Verdana,;
+    color: #ff0000;
+}
+
+.field-validation-valid
+{
+    font-size: 16px;
+    font-family: 微软雅黑,新宋体,Tahoma,Verdana,;
+    display: none;
+}
+
+.input-validation-error
+{
+    font-size: 16px;
+    font-family: 微软雅黑,新宋体,Tahoma,Verdana,;
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors
+{
+    font-size: 16px;
+    font-family: 微软雅黑,新宋体,Tahoma,Verdana,;
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid
+{
+    font-size: 16px;
+    font-family: 微软雅黑,新宋体,Tahoma,Verdana,;
+    display: none;
+}

@@ -1,0 +1,75 @@
+﻿@model DAL.shop
+@{
+    ViewBag.Title = "Welcome";
+}
+
+<!--index.html-->
+<!DOCTYPE html>  
+<html>  
+<head>  
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black"><title>台州凌霄国际饭店</title> 
+
+
+<script type="text/javascript"> 
+
+(function() { 
+var u = navigator.userAgent; 
+if(!(!!u.match(/AppleWebKit.*Mobile.*/)||!!u.match(/AppleWebKit/))) { 
+document.write('<h1 id="notice" style="background-color:red; color:#ffffff; font-size:200%;">您的浏览器不支持新技术Html5请升级或更换浏览器</h1>'); 
+document.execCommand("stop"); 
+} 
+
+}()); 
+
+</script>
+
+<link type="text/css" rel="stylesheet" href="http://f3.v.veimg.cn/maiwei/css/mobile_web_style.css?v=25" />
+<!--<link type="text/css" rel="stylesheet" href="http://f3.v.veimg.cn/maiwei/css/global.css?v=25" />-->
+<script type="text/javascript" src="http://f3.v.veimg.cn/maiwei/js/zepto.min.js?v=25"></script>
+<script type="text/javascript" src="http://f3.v.veimg.cn/maiwei/js/mobile_web_script.js?v=25"></script>   
+</head>  
+ 
+<body>  
+<script language="javascript">
+var home ="/hotel/main";
+var promotion_index = "/promotion/index";
+var room_index = "/room/index";
+
+</script>
+
+<div id="index"> 
+ <ul class="banner">
+     @{
+         if (Model != null)
+         {
+             string imgsUrl = Model.welcome_pic;
+             if (imgsUrl != null)
+             {
+                 string[] imgs = imgsUrl.Split(';');
+                 foreach (string s in imgs)
+                 {
+                     if (s != null && s != string.Empty)
+                     {
+                     <li><img src="/UploadFiles/admin/@s"/></li>
+                     }
+             }
+             }
+         }
+         
+         
+         
+         }
+
+
+ 	 	
+     	@*<li><img src="http://f3.v.veimg.cn/maiwei/uploads/1/20130329163046132.jpg"/></li>*@
+     </ul> 
+ <a href="/shop/info/1"  class="enter_btn"></a>
+</div>
+
+</body> 
+</html> 

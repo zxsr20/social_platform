@@ -1,0 +1,432 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>上传文档_迈点智库_迈点网（meadin.com）_中国酒店业门户网站</title>
+
+    <link href="/Content/style/base.css" type="text/css" rel="stylesheet" />
+<script src="/Content/Scripts/jquery-1.4.1.min.js" type="text/javascript"></script>
+<script src="/Content/Scripts/swfobject.js" type="text/javascript"></script>
+<script src="/Content/Scripts/jquery.uploadify1.v2.1.4.js?v=1113332" type="text/javascript" ></script>
+<link href="/Content/style/datum.css" rel="stylesheet" type="text/css" />
+<link href="/Content/style/uploadify.css" rel="stylesheet" type="text/css" />
+<script src="/Content/Scripts/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="/Content/Scripts/jquery.blockUI.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $(function () {
+                var user = $("#type_hidden").val() + '!' + $("#bid_hidden").val() + '!' + $("#userid_hidden").val();
+                //初始化上传
+                $('#upload').uploadify({
+                    'uploader': '/Images/uploadify.swf',
+                    'script': '/Upload/Upload?userid=' + user,
+                    'folder': 'UploadFiles',
+                    'queueID': 'fileQueue',
+                    'cancelImg': '/Images/cancel.png',
+                    'wmode': 'transparent',
+                    'sizeLimit': 1024 * 1024 * 20, //20M
+                    'multi': true,
+                    'queueSizeLimit': 10,
+                    'buttonImg': '/Images/upload-btn.gif',
+                    'height': 78,
+                    'width': 261,
+                    'fileExt': '*.jpg;*.png;',
+                    'fileDesc': '迈点资料支持的格式',
+                    //                'onOpen': function (event, ID, fileObj) {
+                    //                    alert(1);
+                    //                },
+                    'onSelect': function (event, ID, fileObj) {
+
+                        if (fileObj.size > 1024 * 1024 * 20) {
+                            $(".upload-info").show();
+                            //$(".uploadifyQueue>ul").remove();
+                            //.uploadifyUpload()
+                            $("#upload-infoa").bind("click", function () {
+                                alert(fileObj.name);
+                            });
+                        }
+                        else {
+                            $("#selectdiv").show();
+                            //$("#uploaddiv").height(0);
+                            $("#gz1").show();
+                            $("#gz2").hide();
+                        }
+
+                        //setTimeout("$('#uploaddiv').hide();$('#gz2').hide();", 10000);
+                    },
+                    'onAllComplete': function (event, ID, fileObj) {
+                        //$("#uploaddiv").hide();
+                        $("#gz2").hide();
+                        //$("#uploadUploader").show();
+                    },
+
+                    'removeCompleted': false,
+                    'auto': true
+                    //'onComplete': callback
+                });
+
+
+
+
+            });
+        })
+
+
+
+        function callback(event, queueID, fileObj, response, data) {
+            if (response != "") {
+                alert(response + "成功上传!");
+            }
+            else {
+                alert("文件上传出错!");
+            }
+        }
+
+        $(document).ready(function () {
+            //$("#selectdiv").hide();
+            //$("#uploaddiv").show();
+            var arr = new Array();
+            var imgs = $("#imgsUrl").val();
+            arr = imgs.split(';');
+            if (arr.length>0)
+            {
+                $("selectdiv").show();
+            }
+            $.each(arr, function (key, val) {
+                //回调函数有两个参数,第一个是元素索引,第二个为当前值
+                //alert("1111");
+                if (val=="")
+                {
+                    return;
+                }
+
+                var liid = "li" + key;
+                var divid = "div" + key;
+                var divid2 = "div2" + key;
+                var dochiddenid = "hidden" + key;
+                //$("#oncehiddendiv").find(".zk").attr("onclick", "ss(\"" + ID + "\")");
+                var spanclass = $("#span" + key).attr("class");
+
+                var documenthtml = $("#hiddendiv").html();
+                var docidhidden = "<input id=\"" + dochiddenid + "\"  type='hidden' class='hiddendocidclass' value=\"" + val + "\" />";
+                var html = "<li id=\"" + liid + "\"><div id=\"" + divid2 + "\"><span class=\"" + spanclass + "\"></span><a href='javascript:void(0)' onclick='javascript:zk(\"" + key + "\",\"" + val + "\");'>" + val + "</a><p><span class='zk' onclick='javascript:zk(\"" + key + "\",\"" + val + "\");'>展开</span></p></div>" + documenthtml + "</li>";
+
+
+                //把文档单行和多行放进去
+                $("#listul").append(html);
+                //alert(html);
+                //alert($("#listul").html());
+                //alert($("#listul").find("#oncehiddendiv").attr("ID"));
+                //$("#listul").append(docidhidden);
+                //$("#listul").find("#oncehiddendiv").hide();
+                $("#listul").find("#oncehiddendiv").append(docidhidden);
+                $("#listul").find("#oncehiddendiv").find(".documentname").val(val);
+                //alert("UploadFiles/" + val);
+                //alert($("#listul").find("#oncehiddendiv").find(".uploadimg"));
+                $("#listul").find("#oncehiddendiv").find(".uploadimg").attr("src", "/UploadFiles/"+$("#userid_hidden").val()+"/" + val);
+                $("#listul").find("#oncehiddendiv").find(".zk").click(function () { ssdiv("" + key + ""); }); //.attr("onclick", "javascript:ssdiv(\'" + ID + "\');");
+                //$("#listul").find("#oncehiddendiv").find(".mainselectclass").change(function () { changeselect(key, this.options[this.options.selectedIndex].value) });
+                //alert($("#listul").find("#oncehiddendiv").attr("ID"));
+                //alert($("#listul").find("#oncehiddendiv").attr("ID"));
+                //alert(divid);
+
+                $("#listul").find("#oncehiddendiv").attr("id", divid);
+
+
+
+                //alert('_mozi数组中 ,索引 : ' + key + ' 对应的值为: ' + val);
+            });
+
+
+            $("#gz1").hide();
+            $("#gz2").show();
+        })
+
+
+        function zk(ID, filename) {
+            //展开的时候把收缩的事件绑定到div的按钮中
+            $("#div2" + ID).hide();
+            $("#div" + ID).show();
+        }
+
+        function batch() {
+            var html = $("#batchhiddendiv").html();
+            $("#batchp").html(html);
+        }
+
+        function hiddenbacthsq() {
+            var batchhtml = "<p class='upload-tip' id='batchp'>为了方便资料被更多用户浏览和下载,请耐心补充以下信息.如果您上传提一系列文件,可以<a href='#' onclick='javascript:batch();'>一起填写信息</a></p>";
+            $("#batchp").html(batchhtml);
+        }
+
+        function ssdiv(ID) {
+            $("#div" + ID).hide();
+            $("#div2" + ID).show();
+        }
+
+        function changeselect(ID, a) {
+            var hothtml = "热门标签:";
+            $.getJSON("/Upload/GetTheHotLabel?ram=" + Math.random(), { Type: a }, function (b) {
+                var labelid = "label" + ID;
+                var newlabelid = "";
+                for (var i = 0; i < b.length; i++) {
+                    newlabelid = labelid + "_" + i.toString();
+                    hothtml = hothtml + "<a href='javascript:void(0)'  onclick='AddLable(\"" + ID + "\",\"" + b[i] + "\")' id=\"" + labelid + "\">" + b[i] + "</a>";
+                }
+                $("#div" + ID).find(".hot-tiplist").html(hothtml);
+            });
+
+        }
+
+        function changebatchselect(a) {
+            var hothtml = "热门标签:";
+            $.getJSON("/Upload/GetTheHotLabel?ram=" + Math.random(), { Type: a }, function (b) {
+
+                for (var i = 0; i < b.length; i++) {
+                    hothtml = hothtml + "<a href='javascript:void(0)'  onclick='AddbatchLable()'>" + b[i] + "</a>";
+                }
+                $("#batchp").find(".hot-tiplist").html(hothtml);
+            });
+
+        }
+
+        function AddbatchLable(name) {
+            var txt = $("#batchp").find(".batchlabeltext").val();
+
+            if (txt == "" || txt == "请输入...") {
+
+                $("#batchp").find(".batchlabeltext").attr("value", name);
+            }
+            else {
+                $("#batchp").find(".batchlabeltext").attr("value", $("#batchp").find(".batchlabeltext").val() + "," + name);
+            }
+        }
+
+        function AddLable(ID, name) {
+
+            var txt = $("#div" + ID).find(".labeltext").val();
+
+            if (txt == "" || txt == "请输入...") {
+
+                $("#div" + ID).find(".labeltext").attr("value", name);
+            }
+            else {
+                $("#div" + ID).find(".labeltext").attr("value", $("#div" + ID).find(".labeltext").val() + "," + name);
+            }
+
+
+        }
+
+        function copytodocuments() {
+
+            //遍历所有div，把一起填写的值赋值到所有的文档div
+            var docdescription = $("#batchp").find(".batchdocumentdescription").val();
+            var mainselectval = $("#batchp").find(".batchmainselectclass").val();
+            var secondselectval = $("#batchp").find(".batchsecondselectclass").val();
+            var labelstr = $("#batchp").find(".batchlabeltext").val();
+            var scoreval = $("#batchp").find(".batchscoreselectclass").val();
+            $("#listul").find(".form-ed").each(function () {
+                $(this).find(".documentdescription").val(docdescription);
+                $(this).find(".mainselectclass").val(mainselectval);
+                $(this).find(".secondselectclass").val(secondselectval);
+                $(this).find(".labeltext").val(labelstr);
+                $(this).find(".scoreselectclass").val(scoreval);
+            });
+        }
+
+        function qbzk() {
+            if ($("#qbzk").attr("class") != null && $("#qbzk").attr("class") != "") {
+                $("#listul").find(".form-ed").each(function () {
+                    var divid = $(this).attr("id");
+                    var newdivid = divid.substring(3);
+                    $("#div" + newdivid).show();
+                    $("#div2" + newdivid).hide();
+                });
+                $("#qbzk").removeClass(); //-
+                $("#qbzk").text("全部收缩");
+            }
+            else {
+                $("#listul").find(".form-ed").each(function () {
+                    var divid = $(this).attr("id");
+                    var newdivid = divid.substring(3);
+                    $("#div" + newdivid).hide();
+                    $("#div2" + newdivid).show();
+                });
+                $("#qbzk").addClass("zk"); //+
+                $("#qbzk").text("全部展开");
+            }
+        }
+
+        function writedoc(ID) {
+            $("#div" + ID).show();
+            $("#div2" + ID).hide();
+
+            window.location.hash = "div" + ID;
+        }
+
+
+
+
+        //function stripscript(s) {
+        //    var pattern = new RegExp("[`~!@@#$^&*()=|':;',\\[\\].<>/?~！@@#￥……&*（）——|{}【】‘；：”“'。，、？]")
+        //    var rs = "";
+        //    for (var i = 0; i < s.length; i++) {
+        //        rs = rs + s.substr(i, 1).replace(pattern, '');
+        //    }
+        //    return rs;
+        //}
+
+
+        </script>
+
+    </head>
+
+    <body>
+
+   <div  id="content" >
+
+    <input id="imgsUrl" type="hidden" value="@ViewBag.imgsUrl" />
+    <input id="type_hidden" type="hidden" value="@ViewBag.type" />
+    <input id="bid_hidden" type="hidden" value="@ViewBag.bid" />
+    <input id="userid_hidden" type="hidden" value="@ViewBag.userid" />
+
+
+    <div class="content-left fl" id="uploaddiv" style="width:740px;">
+    	<div class="upload-inner" style="width:99%;">
+
+        	<div class="upload-btn"><input type="image" id="upload" name="upload"  src="/Images/upload-btn.gif"/></div>
+            <p class="upload-info"  style="display:none">提示：您选择的文档中有1份过大，过大的文档将不会被上传。<a id="upload-infoa" href="javascript:void(0)">查看详情</a> </p>
+        </div>
+        <!-- upload-inner end -->
+       
+        <!-- upload-des end -->
+            	
+    </div>
+
+        <div class="content-right fr" id="gz1">
+
+    	<div class="pro-aside-inner" style="margin-top:0px;">
+           
+        	<div class="upload-text">
+            	
+                <p>
+                	请勿在未经授权的情况下上传任何涉及著作权侵权的文档，除非文档完全由您个人创作。</p>
+                    <p>
+"<a href="/home/helps#ad18" target="_blank">版权提示</a>"页面可帮助您确定您的文档是否侵犯了他人的版权。</p>
+<p>点击上传文档即表示您确认该文档不违反文档分享的使用条款，并且您拥有该文档的所有版权或者上传文档的授权。</p>
+
+<p>
+如果上传文档过程中有任何问题请查看<a href="/home/helps" target="_blank">帮助</a>。
+                </p>
+                
+            </div>
+            <!-- lc-inner end -->
+        </div>
+        <!-- pro-aside-inner end -->
+    </div>
+
+    <div class="content-left fl" id="selectdiv" >
+    	<div class="upload-inner">
+        	<p class="upload-tip">
+            	您可以点击某个文件，跳到对应的区域<a href="#listul">输入文档基本信息</a>
+            </p>
+            <p id="fileQueue"></p>
+            <!-- upload-tio end -->
+            <!--upload-list end-->
+            <div class="upload-ed">
+            	<p class="upload-t" id="msg">文档上传中</p>
+                <p class="upload-select"id="successmsg">上传成功:<span id="successgs">0</span>份</p>
+                <p class="upload-lc"><span><i></i></span><em id="uploadingmsg">正在上传:0份</em></p>
+                <p class="fail-inner" >上传失败：<span id="failmsg">0</span>份</p>
+            </div>
+            <!-- upload-ed end -->
+        </div>
+        <!-- upload-inner end -->
+        <div class="upload-des" id="documentallmsg">
+        	<div class="form-cover" id="documentmsg">
+            	<div class="form-title" style="border:none;" id="writedocdiv">
+                	<h2>填写文档信息</h2>
+                </div>
+                <!-- form-title end -->
+                <div id="hiddendiv">
+                <div id="oncehiddendiv" class="form-ed" style="display:none">
+                <dl class="dl-title">
+                	<dt><em>*</em><span>标题</span></dt>
+                    <dd><span><input type="text" class="documentname"  value="" style= "height:25px; "/></span>
+                    <span class="zk" >收起</span>
+                    </dd>
+                </dl>
+                <!-- dl-title end -->
+                <dl class="dl-title">
+                	<dt><span>介绍</span></dt>
+                    <dd>
+                        <span>
+                        
+                        <img class="uploadimg" src=""></img>
+                        
+                        </span>
+
+
+                    </dd>
+                </dl>
+                
+                <!-- dl-title end -->
+              	<p class="top-inner">
+                <a href="#">
+                <img src="/Content/images/top-inner.gif">
+                </a>
+                </p>
+                </div>
+                </div>
+                <!-- form-btn end -->
+                <ul class="form-list" id="listul">
+
+
+                </ul>
+            </div>
+            <!-- form-cover end -->
+            
+            
+            
+        </div>
+        <!-- upload-des end -->  	
+    </div>
+
+
+    <!-- content-left end -->
+	<div class="content-right fr" id="gz2" style="display:none;">
+
+    	<div class="pro-aside-inner" style="margin-top:0px;">
+           
+        	<div class="upload-text">
+            	
+                <p>
+                	请勿在未经授权的情况下上传任何涉及著作权侵权的文档，除非文档完全由您个人创作。</p>
+                    <p>
+"<a href="/home/helps#ad18" target="_blank">版权提示</a>"页面可帮助您确定您的文档是否侵犯了他人的版权。</p>
+<p>点击上传文档即表示您确认该文档不违反文档分享的使用条款，并且您拥有该文档的所有版权或者上传文档的授权。</p>
+
+<p>
+如果上传文档过程中有任何问题请查看<a href="/home/helps" target="_blank">帮助</a>。
+                </p>
+                
+            </div>
+            <!-- lc-inner end -->
+        </div>
+        <!-- pro-aside-inner end -->
+    </div>
+    <!-- content-right end -->
+
+
+</div>
+
+
+        </body>
+
+</html>
+
+

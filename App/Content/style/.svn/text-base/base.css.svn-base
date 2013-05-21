@@ -1,0 +1,173 @@
+@charset "gb2312";
+/*-----------------------公共 CSS--------------------------*/
+body { margin:0; padding:0; font-size:12px; font-family:Arial, Helvetica, sans-serif ,"宋体"; color:#333; text-align:center;
+}
+ul{ padding:0; margin:0; list-style:none;
+}
+p{ padding:0; margin:0;
+}
+h1{ padding:0; margin:0;
+}
+h2{ padding:0; margin:0;
+}
+h3{ padding:0; margin:0;
+}
+form{ margin:0; padding:0;
+}
+.clear,.clr{ clear:both;
+	height:0px;
+	font-size:0;
+	width:100%;
+	overflow:hidden;
+	visibility:hidden;
+}
+a{ color:#000; text-decoration:none;
+}
+a:hover{ color:#000; text-decoration:underline;
+}
+img{ border:0;
+}
+/*-----------------------登录 CSS--------------------------*/
+#wrap{ width:970px; margin:0 auto;text-align:left;
+}
+
+#container { width:970px; margin:0 auto; padding-top:7px; text-align:left;
+}
+#loginBar{ background:url(http://static.md.veimg.cn/images/index/bj-loginBar.jpg) repeat-x; border-bottom:1px solid #b8cfe7; height:26px; line-height:26px; padding-left:10px;
+}
+#loginBar .Ico { float:left; padding:5px 3px 0 0; 
+}
+#loginBar .Ico img{ margin-right:7px; border:0;
+}
+#loginBar .other .red { color:#bd0a01; text-decoration:none;
+}
+#loginBar .usernameFld{ width:125px; float:left;
+}
+.usernameFld .usernameFldTxt{ float:left; padding-right:5px;
+}
+.usernameFld .usernameFldinput{  float:left; margin-top:4px;
+}
+.usernameinput{width:76px; height:12px;
+}
+#loginBar .butFld{ float:left; width:54px; margin-top:4px;
+}
+.butFld .btn_login { background:url(http://static.md.veimg.cn/images/index/btn_login.jpg) no-repeat; width:54px; height:17px; color:#FFF; border:0;
+}
+#loginBar .other { float:left; color:#1e426a; 
+}
+#loginBar .other a{ color:#1e426a; padding:0 0.6em;
+}
+#loginBar .setIndex { float:right;
+}
+.setIndex span{ padding-right:7px; display:inline;
+}
+.setIndex span a{ color:#1e426a;
+}
+.setIndex .tips1 { background:url(http://static.md.veimg.cn/images/index/ico.jpg) no-repeat left; padding-left:20px;
+}
+.setIndex .tips2 { background:url(http://static.md.veimg.cn/images/index/ico1.jpg) no-repeat left; padding-left:20px;
+}
+.setIndex .tips3 { background:url(http://static.md.veimg.cn/images/index/cell.gif) no-repeat left; padding-left:20px;
+}
+
+/*-----------------------导航 CSS--------------------------*/
+#mainnav{ 
+/*padding:15px 0 10px 30px; */
+padding:10px 0 5px 10px;
+width:960px; float:left;
+}
+#mainnav .logo { float:left;width:260px;
+}
+#mainnav .subnav { float:left; padding-left:20px; width:675px;
+}
+.subnav li{ padding-right:10px; float:left; width:102px;
+}
+.subnav li a:hover{ color:#036; text-decoration:none;
+}
+.subnav span { float:left;
+}
+.subnav .List { font-size:14px; font-weight:bold; padding:20px 0 0 7px; 
+}
+/*-----------------------搜索 CSS--------------------------*/
+#searc{ background:url(http://static.md.veimg.cn/images/index/bj-searc.jpg) no-repeat; width:930px; height:32px; line-height:32px; margin:0 auto; padding:0 20px;
+}
+#searc .date { float:left;
+}
+.date img { float:left; padding:2px 5px 0 0 
+}
+#searc .searInfo { float:right; width:670px; 
+}
+.searInfo span{ float:left; margin-right:5px;
+}
+.searInfo a{ color:#f60; padding-right:0.3em;
+}
+.searInfo a:hover{ color:#f60;
+}
+.searInfo img{ margin-top:7px;
+}
+.searInfo input { margin-top:6px; height:13px;
+}
+.searInfo .btn_searc{ background:url(http://static.md.veimg.cn/images/index/btn_searc.jpg) no-repeat; width:53px; height:19px; color:#FFF; border:0;
+}
+#searc .title { float:left; font-size:14px; font-weight:bold; padding-left:20px;
+}
+
+/*页尾样式*/
+#footer{
+	border-top:1px solid #ccc;padding:10px 0;width:970px;margin:7px auto 5px;color:#666;text-align:center;
+}
+#footer_nav{
+	margin-bottom:7px;
+}
+#footer p{
+	margin:3px auto;
+}
+#footer span{
+	margin-left:16px;
+}
+
+
+
+/*content common样式*/
+#content{
+	width:970px;margin:7px auto 0!important;margin:2px auto 0;text-align:left;color:#195A94;
+}
+
+
+
+/*预设样式*/
+ul,ol{
+	margin:0px;padding:0px;list-style:none;
+}
+form,dl,dd{
+	margin:0;padding:0;
+}
+img{
+	border:0;
+}
+.clear,.clr{
+	clear:both; height:0; font-size:0; overflow:hidden; visibility:hidden;
+}
+
+
+.B{
+	font-weight:bold; margin-right:6px;
+	}/
+
+
+
+
+/* 2011.12.8 李春光 新增迈点新导用航 */
+.nav-new dl,.nav-new dd, .nav-new dt{margin:0px; padding:0px;}
+.nav-new{float:right; display:inline-block; margin-left:20px; _margin-left:15px;}
+.nav-new a{margin:0px 4px; display:inline-block; float:left; line-height:24px; color:#003366;}
+.nav-new a:hover{color:#c20707;}
+.nav-new .nav-list{margin:12px 10px 0px 0px; width:147px; overflow:hidden;}
+.nav-new .nav-list strong{font-weight:bold; font-size:14px;}
+.nav-new .nav-list b{/*color:#F00; */font-size:14px; font-weight:bold;}
+.nav-new dd,.nav-new dt{float:left; display:inline-block;}
+.nav-new dt{margin:5px 15px 0px 0px; width:1px; height:56px; background:url(http://static.md.veimg.cn/images/index/nav-line.jpg) no-repeat;}
+.nav-new .n2{width:119px;}
+.nav-new .n3{width:141px;}
+.nav-new .n4{width:95px;}
+.nav-new .n5{width:69px;}
