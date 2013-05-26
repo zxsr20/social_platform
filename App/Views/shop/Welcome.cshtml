@@ -11,7 +11,7 @@
 <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-touch-fullscreen" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black"><title>台州凌霄国际饭店</title> 
+<meta name="apple-mobile-web-app-status-bar-style" content="black"><title>@Model.name 台州凌霄国际饭店</title> 
 
 
 <script type="text/javascript"> 
@@ -27,10 +27,10 @@ document.execCommand("stop");
 
 </script>
 
-<link type="text/css" rel="stylesheet" href="http://f3.v.veimg.cn/maiwei/css/mobile_web_style.css?v=25" />
-<!--<link type="text/css" rel="stylesheet" href="http://f3.v.veimg.cn/maiwei/css/global.css?v=25" />-->
-<script type="text/javascript" src="http://f3.v.veimg.cn/maiwei/js/zepto.min.js?v=25"></script>
-<script type="text/javascript" src="http://f3.v.veimg.cn/maiwei/js/mobile_web_script.js?v=25"></script>   
+<link type="text/css" rel="stylesheet" href="/Content/style/mobile_web_style.css?v=25" />
+<!--<link type="text/css" rel="stylesheet" href="/Content/style/global.css?v=25" />-->
+<script type="text/javascript" src="/Content/Scripts/zepto.min.js?v=25"></script>
+<script type="text/javascript" src="/Content/Scripts/mobile_web_script.js?v=25"></script>   
 </head>  
  
 <body>  
@@ -66,9 +66,9 @@ var room_index = "/room/index";
 
 
  	 	
-     	@*<li><img src="http://f3.v.veimg.cn/maiwei/uploads/1/20130329163046132.jpg"/></li>*@
+     	<li><img src="http://f3.v.veimg.cn/maiwei/uploads/1/20130329163046132.jpg"/></li>
      </ul> 
- <a href="/shop/info/1"  class="enter_btn"></a>
+ <a href="/shop/info/@Model.id"  class="enter_btn"></a>
 </div>
 
 </body> 

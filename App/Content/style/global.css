@@ -1,0 +1,29 @@
+/*
+ *  @author yewang
+ *
+ *  @data  2013/04/17
+ *
+ *  @desc  滑动css
+ *
+ */
+
+ html, body {
+ 	width: 100%;
+ 	overflow-x: hidden;
+ }
+
+ .slideArea {
+ 	width: 100%;
+ 	background-color: gray;
+ 	position: relative;
+ }
+
+ .slideWrap {
+ 	width: 300%;
+ }
+
+ .slideItem {
+ 	float: left;
+ 	width: 33.33333333%;
+ 	min-height: 650px;
+ }
