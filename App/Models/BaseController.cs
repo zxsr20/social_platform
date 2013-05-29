@@ -46,7 +46,7 @@ namespace App.Models
         public void addUserFilter(FlexigridParam param)
         {
             #region 添加用户id过滤
-            if (GetCurrentPerson() != "Admin")
+            if (GetCurrentPerson().ToLower() != "admin")
             {
                 if (param.Query == null || param.Query == "")
                 {
